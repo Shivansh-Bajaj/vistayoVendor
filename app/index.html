@@ -1,0 +1,168 @@
+<html class="full" lang="en">
+<head>
+ 	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Vistayo</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <style type="text/css">
+        @font-face {
+            font-family: Avenir;
+            src: url(./fonts/AvenirLTStd-Medium.otf);
+        }
+        .main-header {
+            font: Avenir;
+            font-size: 67px;
+            font-weight: 800;
+            letter-spacing: 1.49px;
+            color: #f58220;
+            line-height: 40px;
+        }
+    	body {
+			margin-top: 50px;
+			margin-bottom: 50px;
+			background: none;
+            font-weight: 700;
+            font-family: Helvetica;
+            color: #ffffff;
+		}
+        .below-text {
+            font-size: 17px;
+            padding-left: 100px;
+        }
+		.full {
+			background: url(./img/daniel-hjalmarsson-269425.png) no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+        .white-header {
+            font-size: 40px;
+            letter-spacing: 0.13px;
+            text-transform: uppercase;
+            margin-top: 90px;
+            line-height: 50px;
+        }
+        .container {
+            text-align: center;
+        }
+        .paragraph {
+            opacity: 0.83;
+            font-size: 30px;
+            letter-spacing: 0.1px;
+            line-height: 40px;
+            padding-top: 10px;
+        }
+        .inputdiv { 
+            background-color:rgba(0, 0, 0, 0.3);
+        }
+        input {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+        .mdl-textfield__input {
+            border-color: #ffffff;
+            color: #ffffff;
+            max-width: 250px;
+        }
+        .mdl-textfield__label {
+            color: #ffffff;
+        }        
+        button {
+            width: 200px;
+            height: 60px;
+            border-radius: 3px;
+            background-color: #f58220;
+            border-color: #f58220;
+            color: #ffffff;
+            font-size: 19px;
+            letter-spacing: 0.06px;
+            margin-top: 10px;
+            margin-left: -10px;
+        }
+        .container {
+            margin: 0px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+	  <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+                <div ><font class="main-header">VISTAYO</font><br/><font class="below-text"><i>Make your every holiday, a great holiday!</i></font></div>
+                <div style="margin-top: 100px;margin-bottom: 100px;" class="col s10 offset-s1"><font class="white-header">Something Awesome is on it’s way.</font><br />
+                <font class="paragraph">Now, you can make your every holiday, a great holiday. <br />Excited? Stay tuned and be patient. Your patience will be rewarded. :)<br /><br /></font></div>
+                <div class="col offset-s1 s10 ">Vistayo is an invite-only platform that enables travellers make their every holiday, a great holiday.</div>                
+                <div class="col s10 offset-s1 inputdiv">
+                    <form class="row" id="form" style="padding: 40px;">
+                        <div style="text-align: left;margin-left: -10px;">Want an exclusive preview? Request an invite </div>
+                        <div class="row">
+                           <div class="input-field col s12 m3">
+                              <input id="name" name="name" type="text" placeholder="Name" class="validate">
+                              
+                            </div>
+                            <div class="input-field col s12 m3">
+                              <input id="email" name="email" placeholder="Email" type="email" class="validate">
+                              
+                            </div>
+                            <div class="input-field col s12 m3">
+                              <input id="number" name="number" type="number" placeholder="phone" class="validate">
+                            
+                            </div>
+                            <button class="">Request an Invite</button>
+                          </div>
+                    </form>                    
+                </div>
+            </div>
+            <footer>
+                <div class="footer-copyright">
+                <div style="font-size: 18px;opacity: 0.83;" class="container">
+                Got Questions? Email at 
+                <a style="color: #f58220" href="mailto:hello@vistayo.com">hello@vistayo.com</a>
+                </div>
+              </div>
+            </footer>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <script type="text/javascript">
+            function postToGoogle() {
+                var field1 = $('#name').val();
+                var field2 = $('#email').val();
+                var field3 = $('#number').val();
+ 
+                $.ajax({
+                    url: "https://script.google.com/macros/s/AKfycbxuCX3GoDq9ULAaLgIhlxkxWgrU2D6-GFb6ff6pWtWRJKegycY/exec",
+                    data: {"name": field1, "email": field2, "phone": field3, type: 'vendor'},
+                    type: "POST",
+                    dataType: "json",
+                    statusCode: {
+                        0: function() {
+                            alert('Thank You!.');
+                        },
+                        200: function() {
+                            alert('Thank You!.');
+                        }
+                    }
+                });
+            }
+             
+            $(document).ready(function(){
+                $('#form').submit(function() {
+                    postToGoogle();
+                    return false;
+                });
+            });
+        </script>
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</body>
+</html>
